@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import FruitList from "../components/FruitList";
-import FruitTable from "../components/FruitTable";
+import FruitList from "../components/fruitList";
+import FruitTable from "../components/fruitList/FruitTable";
 import Dropdown from "../components/ui/Dropdown";
 import { GroupType } from "../types/fruit";
 import { useAllFruits } from "../api/fruitQueries";

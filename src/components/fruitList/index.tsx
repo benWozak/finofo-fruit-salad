@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useAllFruits } from "../api/fruitQueries";
-import { FruitType } from "../types/fruit";
+import { useAllFruits } from "../../api/fruitQueries";
+import { FruitType } from "../../types/fruit";
 import FruitTable from "./FruitTable";
+import FruitSingleList from "./FruitSingleList";
 
 export default function FruitList() {
   const { data: fruits, isLoading, error } = useAllFruits();
@@ -35,15 +36,7 @@ export default function FruitList() {
           onChange={() => handleViewChange("table")}
         />
       </div>
-      {viewType === "list" && (
-        <ul className="h-5/6 overflow-auto mt-4">
-          {fruits?.map((fruit: FruitType) => (
-            <li key={fruit.id}>
-              {fruit.name} - {fruit.nutritions.calories} cal
-            </li>
-          ))}
-        </ul>
-      )}
+      {viewType === "list" && <FruitSingleList fruits={fruits} />}
       {viewType === "table" && <FruitTable fruits={fruits} />}
     </div>
   );
