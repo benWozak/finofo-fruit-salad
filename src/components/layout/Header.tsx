@@ -1,4 +1,5 @@
 import React from "react";
+import ThemeToggle from "../ui/ThemeToggle";
 
 type Props = {};
 
@@ -10,13 +11,7 @@ function Header({}: Props) {
           <a className="btn btn-ghost text-xl">Finofo Fruit Salad</a>
         </div>
         <div className="flex-none gap-2">
-          <div className="form-control">
-            <input
-              type="text"
-              placeholder="Search"
-              className="input input-bordered w-24 md:w-auto"
-            />
-          </div>
+          <ThemeToggle />
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}

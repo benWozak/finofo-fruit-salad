@@ -28,7 +28,7 @@ export default function FruitChart({ data }: Props) {
   }));
 
   return (
-    <div className="h-72">
+    <div className="h-80">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie

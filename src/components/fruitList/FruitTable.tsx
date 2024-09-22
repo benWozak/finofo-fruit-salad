@@ -8,24 +8,21 @@ type Props = {
 
 export default function FruitTable({ fruits }: Props) {
   return (
-    <div className="h-5/6 overflow-x-auto mt-4">
-      <table className="table table-xs table-pin-rows table-pin-cols">
+    <div className="h-full overflow-x-auto mt-4 rounded-xl bg-base-200">
+      <table className="table table-sm table-pin-rows table-pin-cols">
         <thead>
           <tr>
-            <th></th>
             <td>Name</td>
             <td>Family</td>
             <td>Order</td>
             <td>Genus</td>
             <td>Calories</td>
-            <td>action</td>
-            <th></th>
+            <td></td>
           </tr>
         </thead>
         <tbody>
           {fruits?.map((fruit: FruitType) => (
             <tr key={fruit.id} className="hover">
-              <td></td>
               <td>{fruit.name}</td>
               <td>{fruit.family}</td>
               <td>{fruit.order}</td>

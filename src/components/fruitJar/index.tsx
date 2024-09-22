@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useFruitStore } from "../../store/fruitStore";
 import FruitChart from "./FruitChart";
+import { X } from "lucide-react";
 
 export default function FruitJar() {
   const { fruitJar, removeFruit, clearJar } = useFruitStore();
@@ -16,12 +17,12 @@ export default function FruitJar() {
   };
 
   return (
-    <div className="bg-base-200 p-4 rounded-lg">
+    <div className="h-full p-4 rounded-lg">
       {fruitJar.length === 0 ? (
         <p>Your fruit jar is empty.</p>
       ) : (
         <>
-          <div className="collapse bg-base-200">
+          <div className="collapse rounded-none">
             <input type="checkbox" checked={showChart} onChange={toggleChart} />
             <div className="collapse-title flex justify-between p-0">
               <p className="font-bold">
@@ -35,21 +36,25 @@ export default function FruitJar() {
               <FruitChart data={fruitJar} />
             </div>
           </div>
-          <div className="h-52 overflow-scroll p-4 bg-base-100 rounded-xl">
+          <div
+            className={`${
+              showChart ? "h-48" : "h-4/5"
+            } overflow-scroll p-4 bg-base-200 rounded-xl`}
+          >
             <ul className="space-y-2">
               {fruitJar.map((fruit) => (
                 <li
                   key={fruit.id}
-                  className="flex justify-between items-center"
+                  className="flex justify-between items-center text-sm"
                 >
                   <span>
                     {fruit.name} x{fruit.quantity}
                   </span>
                   <button
                     onClick={() => removeFruit(fruit.id)}
-                    className="btn btn-sm btn-error"
+                    className="btn btn-xs btn-outline rounded-full btn-error"
                   >
-                    Remove
+                    <X size={16} />
                   </button>
                 </li>
               ))}
@@ -57,7 +62,7 @@ export default function FruitJar() {
           </div>
           <div className="flex justify-between">
             <p className="px-4 text-sm text-bold">
-              Fruit types: {fruitJar.length}
+              Total types of fruit: {fruitJar.length}
             </p>
             <button onClick={clearJar} className="btn btn-warning mt-4">
               Clear Jar

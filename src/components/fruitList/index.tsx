@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useAllFruits } from "../../api/fruitQueries";
-import { FruitType } from "../../types/fruit";
 import FruitTable from "./FruitTable";
 import FruitSingleList from "./FruitSingleList";
 
@@ -36,8 +35,10 @@ export default function FruitList() {
           onChange={() => handleViewChange("table")}
         />
       </div>
-      {viewType === "list" && <FruitSingleList fruits={fruits} />}
-      {viewType === "table" && <FruitTable fruits={fruits} />}
+      <div className="h-full py-4">
+        {viewType === "list" && <FruitSingleList fruits={fruits} />}
+        {viewType === "table" && <FruitTable fruits={fruits} />}
+      </div>
     </div>
   );
 }

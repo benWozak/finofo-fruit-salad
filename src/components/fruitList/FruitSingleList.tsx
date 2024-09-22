@@ -8,8 +8,8 @@ type Props = {
 
 function FruitSingleList({ fruits }: Props) {
   return (
-    <div className="h-5/6 overflow-x-auto mt-4">
-      <table className="table table-xs table-pin-rows table-pin-cols">
+    <div className="h-full overflow-x-auto mt-4 rounded-xl bg-base-200">
+      <table className="table table-sm table-pin-rows table-pin-cols">
         <thead>
           <tr>
             <td>Name (calories)</td>

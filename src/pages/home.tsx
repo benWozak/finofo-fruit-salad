@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import FruitList from "../components/fruitList";
+import GroupedFruitList from "../components/fruitList/GroupedFruitList";
 import FruitJar from "../components/fruitJar";
 import Dropdown from "../components/ui/Dropdown";
 import { GroupType } from "../types/fruit";
-import { useAllFruits } from "../api/fruitQueries";
 
 const Home = () => {
   const groupItems = [
@@ -12,30 +12,33 @@ const Home = () => {
     { id: "order" as GroupType, label: "Order" },
     { id: "genus" as GroupType, label: "Genus" },
   ];
-  const [selected, setSelected] = useState("None");
-  const { data: fruits, isLoading, error } = useAllFruits();
+  const [selected, setSelected] = useState<GroupType>("none");
 
   const handleItemSelect = (item: { id: string | number; label: string }) => {
-    setSelected(item.label);
+    setSelected(item.id as GroupType);
   };
 
   return (
-    <div className="flex h-screen">
-      <div className="w-1/2 bg-base-300 rounded-lg p-8">
-        <div className="flex justify-between mb-8">
-          <h2 className="text-2xl font-bold ">Fruit Inventory</h2>
+    <div className="flex flex-col md:flex-row h-screen">
+      <div className="w-full h-full md:w-1/2 bg-base-300 rounded-lg p-4 md:p-8 mb-4">
+        <div className="flex flex-col sm:flex-row justify-between mb-4 md:mb-8">
+          <h2 className="text-2xl font-bold mb-2 sm:mb-0">Fruit Inventory</h2>
           <Dropdown
             items={groupItems}
             onItemSelect={handleItemSelect}
             buttonText={
-              selected === "None" ? "Sort by group" : `Sorted by - ${selected}`
+              selected === "none" ? "Sort by group" : `Sorted by - ${selected}`
             }
           />
         </div>
-        {selected === "None" ? <FruitList /> : <div>placeholder</div>}
+        {selected === "none" ? (
+          <FruitList />
+        ) : (
+          <GroupedFruitList groupBy={selected} />
+        )}
       </div>
-      <div className="divider lg:divider-horizontal"></div>
-      <div className="w-1/2 bg-base-300 rounded-lg p-8">
+      <div className="md:divider md:divider-horizontal"></div>
+      <div className="w-full md:w-1/2 bg-base-300 rounded-lg p-4 md:p-8">
         <h2 className="text-2xl font-bold mb-4">Fruit Jar</h2>
         <FruitJar />
       </div>
