@@ -8,7 +8,7 @@ function Header({}: Props) {
     <header>
       <nav className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Finofo Fruit Salad</a>
+          <a className="text-2xl font-semibold px-4">Finofo Fruit Salad</a>
         </div>
         <div className="flex-none gap-2">
           <ThemeToggle />
@@ -19,10 +19,7 @@ function Header({}: Props) {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img
-                  alt="personal profile image"
-                  src="src/assets/profile.webp"
-                />
+                <img alt="personal profile image" src="/profile.webp" />
               </div>
             </div>
             <ul

@@ -18,7 +18,7 @@ function FruitSingleList({ fruits }: Props) {
         </thead>
         <tbody>
           {fruits?.map((fruit: FruitType) => (
-            <tr key={fruit.id} className="hover">
+            <tr key={fruit.id} className="hover hover:bg-slate-100">
               <td>
                 {fruit.name} ({fruit.nutritions.calories} cal)
               </td>

@@ -6,12 +6,7 @@ function Footer({}: Props) {
   return (
     <footer className="footer bg-neutral text-neutral-content p-4">
       <aside className="flex gap-8 justify-center items-center">
-        <img
-          src="/src/assets/BW_logo_light.svg"
-          alt="logo"
-          height="90"
-          width="90"
-        />
+        <img src="/BW_logo_light.svg" alt="logo" height="90" width="90" />
         <p>
           Ben Wozak
           <br />

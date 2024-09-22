@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { useAllFruits } from "../../api/fruitQueries";
 import FruitTable from "./FruitTable";
 import FruitSingleList from "./FruitSingleList";
+import Loading from "../ui/Loading";
+import Error from "../ui/Error";
 
 export default function FruitList() {
   const { data: fruits, isLoading, error } = useAllFruits();
   const [viewType, setViewType] = useState("list");
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error loading fruits: {error.message}</div>;
-  console.log(fruits);
+  if (isLoading) return <Loading />;
+  if (error) return <Error message={error.message} />;
 
   const handleViewChange = (view) => {
     setViewType(view);
