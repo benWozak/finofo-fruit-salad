@@ -13,4 +13,8 @@ export interface FruitType {
   }
 }
 
+export interface FruitJarItem extends FruitType {
+  quantity: number
+}
+
 export type GroupType = 'family' | 'order' | 'genus' | 'none'

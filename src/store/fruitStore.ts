@@ -1,9 +1,6 @@
 import { create } from 'zustand'
-import { FruitType } from '../types/fruit'
+import { FruitType, FruitJarItem } from '../types/fruit'
 
-interface FruitJarItem extends FruitType {
-  quantity: number
-}
 
 interface FruitStore {
   fruitJar: FruitJarItem[]
