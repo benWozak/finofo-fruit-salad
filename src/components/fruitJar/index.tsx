@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFruitStore } from "../../store/fruitStore";
 import FruitChart from "./FruitChart";
 import { X } from "lucide-react";
+import AddFruitButton from "../ui/AddFruitButton";
 
 export default function FruitJar() {
   const { fruitJar, removeFruit, clearJar } = useFruitStore();
@@ -19,7 +20,16 @@ export default function FruitJar() {
   return (
     <div className="h-full p-4 rounded-lg">
       {fruitJar.length === 0 ? (
-        <p>Your fruit jar is empty.</p>
+        <div className="flex h-3/5 flex-col justify-center items-center text-center">
+          <div className="max-w-96">
+            <p className="text-bold text-2xl mb-4">Your fruit jar is empty</p>
+            <p className="text-bold text-md">
+              Select a fruit from the list by hitting the{" "}
+              <AddFruitButton disabled /> from the panel and begin your fruit
+              salad journey
+            </p>
+          </div>
+        </div>
       ) : (
         <>
           <div className="collapse rounded-none">

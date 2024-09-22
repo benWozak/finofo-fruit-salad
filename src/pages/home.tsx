@@ -19,9 +19,9 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen">
-      <div className="w-full h-full md:w-1/2 bg-base-300 rounded-lg p-4 md:p-8 mb-4">
-        <div className="flex flex-col sm:flex-row justify-between mb-4 md:mb-8">
+    <div className="flex flex-col md:flex-row h-full">
+      <div className="w-full h-96 md:h-screen md:w-1/2 bg-base-300 rounded-lg p-8 mb-4">
+        <div className="flex flex-col sm:flex-row justify-between md:mb-4">
           <h2 className="text-2xl font-bold mb-2 sm:mb-0">Fruit Inventory</h2>
           <Dropdown
             items={groupItems}
@@ -38,7 +38,7 @@ const Home = () => {
         )}
       </div>
       <div className="md:divider md:divider-horizontal"></div>
-      <div className="w-full md:w-1/2 bg-base-300 rounded-lg p-4 md:p-8">
+      <div className="w-full md:w-1/2 bg-base-300 rounded-lg p-4">
         <h2 className="text-2xl font-bold mb-4">Fruit Jar</h2>
         <FruitJar />
       </div>

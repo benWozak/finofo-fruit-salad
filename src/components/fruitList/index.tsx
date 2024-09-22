@@ -35,7 +35,7 @@ export default function FruitList() {
           onChange={() => handleViewChange("table")}
         />
       </div>
-      <div className="h-full py-4">
+      <div className="h-60 md:h-full py-4">
         {viewType === "list" && <FruitSingleList fruits={fruits} />}
         {viewType === "table" && <FruitTable fruits={fruits} />}
       </div>

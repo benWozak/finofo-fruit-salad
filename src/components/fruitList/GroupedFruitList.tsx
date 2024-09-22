@@ -2,6 +2,7 @@ import React from "react";
 import { FruitType, GroupType } from "../../types/fruit";
 import { useAllFruits } from "../../api/fruitQueries";
 import FruitSingleList from "./FruitSingleList";
+import Error from "../ui/Error";
 
 interface GroupedFruitListProps {
   groupBy: GroupType;
@@ -11,7 +12,7 @@ export default function GroupedFruitList({ groupBy }: GroupedFruitListProps) {
   const { data: fruits, isLoading, error } = useAllFruits();
 
   if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (error) return <Error message={error.message} />;
 
   const groupedFruits = fruits?.reduce((acc, fruit) => {
     const key = fruit[groupBy];
