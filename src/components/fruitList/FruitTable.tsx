@@ -1,5 +1,6 @@
 import React from "react";
 import { FruitType } from "../../types/fruit";
+import AddFruitButton from "../ui/AddFruitButton";
 
 type Props = {
   fruits: FruitType[] | undefined;
@@ -32,7 +33,7 @@ export default function FruitTable({ fruits }: Props) {
               <td>{fruit.nutritions.calories} cal</td>
               <td>
                 <div className="flex justify-end">
-                  <button className="btn btn-primary btn-xs">Add</button>
+                  <AddFruitButton fruit={fruit} />
                 </div>
               </td>
             </tr>

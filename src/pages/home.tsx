@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FruitList from "../components/fruitList";
-import FruitTable from "../components/fruitList/FruitTable";
+import FruitJar from "../components/fruitJar";
 import Dropdown from "../components/ui/Dropdown";
 import { GroupType } from "../types/fruit";
 import { useAllFruits } from "../api/fruitQueries";
@@ -37,7 +37,7 @@ const Home = () => {
       <div className="divider lg:divider-horizontal"></div>
       <div className="w-1/2 bg-base-300 rounded-lg p-8">
         <h2 className="text-2xl font-bold mb-4">Fruit Jar</h2>
-        <p>Right side content</p>
+        <FruitJar />
       </div>
     </div>
   );
