@@ -31,7 +31,9 @@ export default function FruitTable({ fruits }: Props) {
               <td>{fruit.genus}</td>
               <td>{fruit.nutritions.calories} cal</td>
               <td>
-                <button className="btn btn-primary btn-xs">Add</button>
+                <div className="flex justify-end">
+                  <button className="btn btn-primary btn-xs">Add</button>
+                </div>
               </td>
             </tr>
           ))}
