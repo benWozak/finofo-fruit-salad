@@ -20,7 +20,7 @@ export default function FruitList() {
     <div className="h-5/6">
       <div className="join">
         <input
-          className="join-item btn"
+          className="join-item btn btn-sm"
           type="radio"
           name="options"
           aria-label="List View"
@@ -28,7 +28,7 @@ export default function FruitList() {
           onChange={() => handleViewChange("list")}
         />
         <input
-          className="join-item btn"
+          className="join-item btn btn-sm"
           type="radio"
           name="options"
           aria-label="Table View"

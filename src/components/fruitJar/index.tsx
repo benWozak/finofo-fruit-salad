@@ -18,7 +18,7 @@ export default function FruitJar() {
   };
 
   return (
-    <div className="h-full p-4 rounded-lg">
+    <div className="h-full rounded-lg">
       {fruitJar.length === 0 ? (
         <div className="flex h-3/5 flex-col justify-center items-center text-center">
           <div className="max-w-96">
@@ -48,8 +48,8 @@ export default function FruitJar() {
           </div>
           <div
             className={`${
-              showChart ? "h-48" : "h-4/5"
-            } overflow-scroll p-4 bg-base-200 rounded-xl`}
+              showChart ? "h-48" : "h-4/6"
+            } overflow-auto p-4 bg-base-200 rounded-xl`}
           >
             <ul className="space-y-2">
               {fruitJar.map((fruit) => (
@@ -71,8 +71,8 @@ export default function FruitJar() {
             </ul>
           </div>
           <div className="flex justify-between">
-            <p className="px-4 text-sm text-bold">
-              Total types of fruit: {fruitJar.length}
+            <p className="px-2 text-sm text-bold">
+              Total fruit types included: {fruitJar.length}
             </p>
             <button onClick={clearJar} className="btn btn-warning mt-4">
               Clear Jar

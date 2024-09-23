@@ -8,7 +8,7 @@ const RootLayout = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
 
-      <main className="p-8 flex-grow">
+      <main className="px-8 py-4 flex-grow">
         <Outlet />
       </main>
 

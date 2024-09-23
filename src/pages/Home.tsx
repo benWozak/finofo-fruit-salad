@@ -19,15 +19,15 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-full">
-      <div className="w-full h-96 md:h-screen md:w-1/2 bg-base-300 rounded-lg p-8 mb-4">
+    <div className="flex flex-col md:flex-row h-max md:h-full gap-4 md:gap-2s">
+      <div className="w-full h-96 md:h-screen md:w-1/2 bg-base-300 rounded-lg p-4">
         <div className="flex flex-col sm:flex-row justify-between md:mb-4">
           <h2 className="text-2xl font-bold mb-2 sm:mb-0">Fruit Inventory</h2>
           <Dropdown
             items={groupItems}
             onItemSelect={handleItemSelect}
             buttonText={
-              selected === "none" ? "Sort by group" : `Sorted by - ${selected}`
+              selected === "none" ? "Group by" : `Grouped by - ${selected}`
             }
           />
         </div>
